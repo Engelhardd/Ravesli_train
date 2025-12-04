@@ -7,32 +7,32 @@
 #include "pars_txt.h"
 
 int main() {
-	std::string number_user;
-	std::vector<int> vector_number;
-	int result;
-	
-	// записываем, что ввел пользователь
-	number_user = readFile();
+    std::string number_user;
+    std::vector<int> vector_number;
+    int result;
 
-	if (number_user != "Error") {
-		// выводим, что введ пользователь
-		printFile(number_user);
+    // Read user input from file
+    number_user = readFile();
 
-		// создаем вектор из введенных пользователем числе
-		vector_number = inputVector(number_user);
+    if (number_user != "Error") {
+        // Display user input
+        printFile(number_user);
 
-		// печатаем вектор
-		printVector(vector_number);
+        // Create vector from user input numbers
+        vector_number = inputVector(number_user);
 
-		// Поиск минимального числа
-		auto it = std::min_element(vector_number.begin(), vector_number.end());
-		result = *it;
+        // Print the vector
+        printVector(vector_number);
 
-		// Вывод результата
-		std::cout << "\nNumber Min =  ";
-		std::cout << result << std::endl;
-	}
-	else {
-		std::cout << "Error";
-	}
+        // Find minimum number
+        auto it = std::min_element(vector_number.begin(), vector_number.end());
+        result = *it;
+
+        // Output result
+        std::cout << "\nMinimum Number = ";
+        std::cout << result << std::endl;
+    }
+    else {
+        std::cout << "Error";
+    }
 }
