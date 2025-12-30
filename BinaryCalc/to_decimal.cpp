@@ -23,6 +23,7 @@ int unsignedBinaryToDecimal(const std::vector<int> vec) {
 
 int signedBinaryToDecimal(const std::vector<int> vec) {
 	std::vector<int> tmp_vec{};
+	int resulte;
 
 	for (int i = 1; i < vec.size(); ++i) {
 		if (vec[i] == 0) {
@@ -35,7 +36,13 @@ int signedBinaryToDecimal(const std::vector<int> vec) {
 
 	tmp_vec = sumUnsignedBinary(tmp_vec, {0, 0, 0, 1} );
 
-	int resulte = unsignedBinaryToDecimal(tmp_vec) * -1;
-
+	
+	if (vec[0] == 1) {
+		resulte = unsignedBinaryToDecimal(tmp_vec) * -1;
+	}
+	else {
+		resulte = unsignedBinaryToDecimal(tmp_vec);
+	}
+	
 	return resulte;
 }
