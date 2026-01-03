@@ -25,7 +25,7 @@ int signedBinaryToDecimal(const std::vector<int> vec) {
 	std::vector<int> tmp_vec{};
 	int resulte;
 
-	for (int i = 1; i < vec.size(); ++i) {
+	for (int i = 1; i < vec.size(); ++i) {		
 		if (vec[i] == 0) {
 			tmp_vec.push_back(1);
 		}
@@ -34,7 +34,7 @@ int signedBinaryToDecimal(const std::vector<int> vec) {
 		}
 	}
 
-	tmp_vec = sumUnsignedBinary(tmp_vec, {0, 0, 0, 1} );
+	tmp_vec = sumUnsignedBinary(vec, {0, 0, 0, 1} );
 
 	
 	if (vec[0] == 1) {

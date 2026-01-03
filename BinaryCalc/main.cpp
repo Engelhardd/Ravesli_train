@@ -4,6 +4,7 @@
 
 #include "binary_calc.h"
 #include "to_decimal.h"
+#include "print_vector.h"
 
 std::vector<int> parsVector(const std::string str) {
 	std::vector<int> result;
@@ -38,13 +39,17 @@ int main() {
 	std::vector<int> vec_print = sumUnsignedBinary(vec1, vec2);
 
 	std::cout << "----" << std::endl;
-	std::cout << "sum : " << unsigned_res1 << " + " << unsigned_res2 << std::endl;
-	for (auto& it : vec_print) {
-		std::cout << it;
-	}
-	std::cout << std::endl;
+	std::cout << "sum : " << unsigned_res1 << " + " << unsigned_res2 << " = " <<
+		unsigned_res1 + unsigned_res2 << std::endl;
 
-	std::cout << "BinaryToDecimal: " << unsignedBinaryToDecimal(vec_print) << std::endl;
+	std::cout << "----" << std::endl;
+	std::cout << "sum : ";
+	printVector(vec1);
+	std::cout << " + ";
+	printVector(vec2);
+	std::cout << " = "; 
+	printVector(vec_print);
+	std::cout << std::endl;
 
 	return 0;
 }
