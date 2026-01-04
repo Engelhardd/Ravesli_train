@@ -1,4 +1,4 @@
-#include "to_decimal.h"
+#include "transfer.h"
 
 int unsignedBinaryToDecimal(const std::vector<int> vec) {
 	int result = 0;
@@ -45,4 +45,19 @@ int signedBinaryToDecimal(const std::vector<int> vec) {
 	}
 	
 	return resulte;
+}
+
+std::vector<int> unsignedDecimalToBinary(int& num) {
+	std::vector<int> result{};
+
+	if (num == 0) {
+		result.insert(result.begin(), 0);
+	}
+
+	while (num > 0) {
+		result.insert(result.begin(), num % 2);
+		num /= 2;
+	}
+
+	return result;
 }

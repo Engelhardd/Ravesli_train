@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "binary_calc.h"
-#include "to_decimal.h"
+#include "transfer.h"
 #include "print_vector.h"
 
 std::vector<int> parsVector(const std::string str) {
@@ -37,8 +37,16 @@ int main() {
 	std::cout << "signed: " << signed_res1 << " " << signed_res2 << std::endl;
 
 	std::vector<int> vec_print = sumUnsignedBinary(vec1, vec2);
+	
+	// Тестирую функцию: начало
+	std::cout << "\n--test--" << std::endl;
+	int for_test = unsigned_res1 + unsigned_res2;
+	std::vector<int> test_func_unsignedDecimalToBinary = unsignedDecimalToBinary(for_test);
+	printVector(test_func_unsignedDecimalToBinary);  // for test function
+	std::cout << "\n--test--" << std::endl;
+	// Тестирую функцию: конец
 
-	std::cout << "----" << std::endl;
+	std::cout << "\n----" << std::endl;
 	std::cout << "sum : " << unsigned_res1 << " + " << unsigned_res2 << " = " <<
 		unsigned_res1 + unsigned_res2 << std::endl;
 
